@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at 8% 0%, rgba(125, 211, 252, 0.14), transparent 28rem),
+      radial-gradient(circle at 88% 2%, rgba(167, 139, 250, 0.12), transparent 26rem),
+      radial-gradient(circle at 60% 90%, rgba(247, 200, 115, 0.09), transparent 24rem),
+      linear-gradient(135deg, #060b14 0%, #0a1220 45%, #101527 100%);
+    color: #f7fafc;
+    font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  }
+
+  ::selection {
+    background: rgba(125, 211, 252, 0.35);
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply border border-white/10 bg-white/[0.07] shadow-panel backdrop-blur-xl;
+    box-shadow:
+      0 24px 80px rgba(0, 0, 0, 0.44),
+      inset 0 1px 0 rgba(255, 255, 255, 0.07);
+    background-image:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.028)),
+      linear-gradient(180deg, rgba(125, 211, 252, 0.04), rgba(247, 200, 115, 0.018));
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-mint/70 focus-visible:ring-offset-2 focus-visible:ring-offset-ink;
+  }
+
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    @apply transition duration-200 ease-out;
+  }
+
+  tbody tr {
+    @apply transition duration-200 ease-out;
+  }
+
+  table {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+}
