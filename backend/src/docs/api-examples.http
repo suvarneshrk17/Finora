@@ -1,0 +1,49 @@
+### Health
+GET http://localhost:5000/api/v1/health
+
+### Register
+POST http://localhost:5000/api/v1/auth/register
+Content-Type: application/json
+
+{
+  "name": "Finora Admin",
+  "email": "admin@finora.test",
+  "password": "Finora123",
+  "role": "admin"
+}
+
+### Login
+POST http://localhost:5000/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@finora.test",
+  "password": "Finora123"
+}
+
+### Create Customer
+POST http://localhost:5000/api/v1/customers
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "Aarav Mehta",
+  "phone": "",
+  "address": "Shop 12, Main Road, Mumbai",
+  "aadhaarNumber": "",
+  "panNumber": ""
+}
+
+### Create Loan
+POST http://localhost:5000/api/v1/loans
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "customer": "{{customerId}}",
+  "principal": 4200000,
+  "monthlyInterestRate": 2.5,
+  "interestType": "simple",
+  "startDate": "2026-05-15",
+  "dueDate": "2026-06-15"
+}
